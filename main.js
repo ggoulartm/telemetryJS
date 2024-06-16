@@ -1,4 +1,4 @@
-const client = new Paho.MQTT.Client(brokerIp, brokerPort, username);
+client = new Paho.MQTT.Client(brokerIp, brokerPort, username);
 
 let interface = {};
 
@@ -28,8 +28,14 @@ window.onload = () => {
   };
 
   client.connect({
+    useSSL: true,
+    timeout: 100,
+    userName: username,
+    password: password,
     onSuccess: () => {
       console.log("MQTT Connected Succesfully");
+      client.subscribe("test");
+      client.subscribe("GPS_Topic");
       client.subscribe("0x186455F4");
       client.subscribe("0x186555F4");
       client.subscribe("0x186655F4");
@@ -57,6 +63,9 @@ client.onMessageArrived = (message) => {
   const { red, green } = warningColors;
 
   switch (topic) {
+    case "GPS_Topic":
+      console.log(data);
+      break;
     case "0x186455F4":
       boatBattery.power = Number(data[3]);
       power.innerHTML = `${boatBattery.power} W`;
