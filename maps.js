@@ -1,6 +1,6 @@
 let map;
 
-const CREDENTIAL_KEY = ""
+const CREDENTIAL_KEY = "CREDENTIAL_KEY_FROM_GOOGLE_MAPS_JAVASCRIPT_API"
 
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
@@ -19,16 +19,10 @@ async function initMap() {
 
     window.placeMarker = placeMarker
     window.marker = marker
-    window.map = map
 }
 
-function placeMarker(map, location, marker) {
+function placeMarker(location, marker) {
     marker.position = location
-    var infowindow = new google.maps.InfoWindow({
-      content: 'Latitude: ' + location.lat +
-      '<br>Longitude: ' + location.lng
-    });
-    infowindow.open(map,marker);
   }
 
 initMap();
