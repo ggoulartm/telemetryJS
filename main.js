@@ -64,7 +64,11 @@ client.onMessageArrived = (message) => {
 
   switch (topic) {
     case "GPS_Topic":
-      console.log(data);
+      const payload = JSON.parse(data)
+      console.log(payload.location.coordinates)
+      location.lat = parseFloat(payload.location.coordinates[1])
+      location.lng = parseFloat(payload.location.coordinates[0])
+      window.placeMarker(window.map,location, window.marker)
       break;
     case "0x186455F4":
       boatBattery.power = Number(data[3]);
