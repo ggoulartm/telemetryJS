@@ -3,14 +3,30 @@ const defaultGraphOptions = {
   data: {
     datasets: [
       {
-        data: [],
+        tension: 0,
+        fill: false,
+        data: [0,0,0,0,0,0,0,0,0,0],
+        pointRadius: 3,
+        pointBackgroundColour:"#fc912e",
+        pointHoverBackgroundColor: "rgb(0,0,255,1)",
+        pointBorderColor:"#fc912e",
       },
     ],
+    labels: [0,0,0,0,0,0,0,0,0,0],
   },
   options: {
     animation: false,
+    plugins: {
+        colors: {
+          enabled: false
+        }
+    },
+    responsive: true,
     legend: {
       display: false,
+    },
+    interaction: {
+      intersect: false,
     },
     scales: {
       xAxes: [{ display: false }],
@@ -27,7 +43,10 @@ const defaultGraphOptions = {
         borderColor: "rgb(252,145,46)",
       },
       point: {
-        radius: 0,
+        radius: 1,
+        pointBackgroundColour:"rgba(255, 144, 0, 0 , 0.8)",
+        pointHoverBackgroundColor: "rgb(0,0,255,1)",
+        pointBorderColor:"rgba(111,222,333,0.5)",
       },
     },
   },
@@ -42,10 +61,10 @@ const defaultVGraphOptions = {
         {
           display: true,
           ticks: {
-            min: 0,
-            max: 300,
-            stepSize: 20,
-            callback: (value) => `${value / 10} V`,
+            min: 33,
+            max: 45,
+            stepSize: 2,
+            callback: (value) => `${value} V`,
           },
         },
       ],
@@ -63,9 +82,9 @@ const defaultCGraphOptions = {
           display: true,
           ticks: {
             min: 0,
-            max: 2000,
-            stepSize: 400,
-            callback: (value) => `${value / 10} A`,
+            max: 100,
+            stepSize: 25,
+            callback: (value) => `${value} A`,
           },
         },
       ],
@@ -82,10 +101,10 @@ const defaultTGraphOptions = {
         {
           display: true,
           ticks: {
-            min: 200,
-            max: 1000,
-            stepSize: 200,
-            callback: (value) => `${value / 10} °C`,
+            min: 20,
+            max: 60,
+            stepSize: 10,
+            callback: (value) => `${value} °C`,
           },
         },
       ],

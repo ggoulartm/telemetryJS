@@ -1,7 +1,5 @@
 let map;
 
-const CREDENTIAL_KEY = "CREDENTIAL_KEY_FROM_GOOGLE_MAPS_JAVASCRIPT_API"
-
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");

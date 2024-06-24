@@ -3,6 +3,9 @@ const brokerPort = 8884;
 const username = "teste";
 const password = "Teste@123";
 
+const CREDENTIAL_KEY = "AIzaSyAtSCR2vfh5EEc7KEBh1SCpDyVgo4hzKTc";
+
+
 const GPS_Topic = "GPS_Topic"
 const VOLTAGE_Topic = "VOLTAGE_Topic"
 const TEMPERATURE_Topic1 = "TEMPERATURE_Topic1"
