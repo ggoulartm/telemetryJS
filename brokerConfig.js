@@ -1,9 +1,9 @@
-const brokerIp = "a2764ef186944864b4db1b5691eb98ff.s1.eu.hivemq.cloud";
+const brokerIp = "MQTT_BROKER_IP";
 const brokerPort = 8884;
-const username = "teste";
-const password = "Teste@123";
+const username = "USERNAME";
+const password = "PASSWORD";
 
-const CREDENTIAL_KEY = "AIzaSyAtSCR2vfh5EEc7KEBh1SCpDyVgo4hzKTc";
+const CREDENTIAL_KEY = "CREDENTIAL_KEY_GOOGLE_API";
 
 
 const GPS_Topic = "GPS_Topic"
